@@ -10,6 +10,11 @@ struct Person{
     int games[5][4][4];
 };
 
+void clrscr()
+{
+    system("@cls||clear");
+}
+
 void saveUser(FILE*, struct Person*);
 void readUser(FILE*, int, struct Person*);
 void saveNewuser(FILE*, struct Person*);
@@ -37,6 +42,8 @@ int main(){
     int choice;
 
     scanf("%d", &choice);
+    
+    clrscr();
 
     printf("\n");
 
@@ -52,12 +59,13 @@ int main(){
         user = createNewuser();
         printf("Welcome %s \n\n", user.name);
         printf("New game created! \n\n");
+
         score = createNewGame(gameBoard, 1);
 
         printf("Your score is: %d\n\n", score);
                 
         if(score > user.best_score){
-            printf("%d is your new best score. ", score);
+            printf("%d is your new best score. \n\n", score);
         }
 
         printf("1. Save the game. \n");
@@ -68,6 +76,8 @@ int main(){
 
         if(choice1 == 1){
             int record;
+            
+            clrscr();
 
             printf("Which place do you want to save your game? \n");
             printf("Choose a record: \n");
@@ -175,7 +185,7 @@ int main(){
                 scanf("%d", &choice2);
                 if(choice2 == 1){
                     int record;
-
+                    clrscr();
                     printf("Which place do you want to save your game? \n");
                     printf("Choose a record: \n");
 
@@ -221,7 +231,7 @@ int main(){
                 printf("Your score is: %d\n\n", score);
                 
                 if(score > user->best_score){
-                    printf("%d is your new best score. ", score);
+                    printf("%d is your new best score. \n\n", score);
                 }
 
                 printf("1. Save the game. \n");
@@ -231,7 +241,7 @@ int main(){
                 scanf("%d", &choice2);
                 if(choice2 == 1){
                     int record;
-
+                    clrscr();
                     printf("Which place do you want to save your game? \n");
                     printf("Choose a record: \n");
 
@@ -448,6 +458,7 @@ int createNewGame(int matrix[][4], int new){
         printMatrix(matrix, score);
         printf("Please make a move: ");
         scanf(" %c", &choice);
+        clrscr();
         printf("\n");
         switch (choice)
         {
