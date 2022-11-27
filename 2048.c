@@ -15,6 +15,10 @@ void clrscr()
     system("@cls||clear");
 }
 
+
+
+
+
 void saveUser(FILE*, struct Person*);
 void readUser(FILE*, int, struct Person*);
 void saveNewuser(FILE*, struct Person*);
